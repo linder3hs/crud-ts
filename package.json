@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "npx nodemon",
-    "build": "CI=false rimraf ./build && tsc",
+    "build": "CI=false tsc",
     "start": "npm run build && node build/src/index.js"
   },
   "keywords": [],
