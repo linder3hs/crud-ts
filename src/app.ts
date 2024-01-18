@@ -1,6 +1,7 @@
 import express, { type Application } from "express";
 import cors from "cors";
 import { userRouter, productRouter } from "./components";
+import "dotenv/config";
 
 const app: Application = express();
 app.use(cors());
