@@ -1,4 +1,5 @@
 import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
+import { UploadedFile } from "express-fileupload";
 
 const s3Client = new S3Client({
   region: "us-west-2",
@@ -8,12 +9,7 @@ const s3Client = new S3Client({
   },
 });
 
-interface CustomFile {
-  name: string;
-  data: Buffer;
-}
-
-export async function uploadFile(file: CustomFile) {
+export async function uploadFile(file: UploadedFile) {
   const keyFile = `images/codigo-15-${Date.now()}-${file.name}`;
   const params = {
     Bucket: "test-2024-node-ts",
